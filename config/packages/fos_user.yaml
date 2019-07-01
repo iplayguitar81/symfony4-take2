@@ -5,3 +5,9 @@ fos_user:
     from_email:
         address: "snyder.chris.m@gmail.com"
         sender_name: "Chris Snyder"
+    registration:
+        form:
+            type: App\Form\RegistrationFormType
+    profile:
+        form:
+            type: App\Form\ProfileFormType

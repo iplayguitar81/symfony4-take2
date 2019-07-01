@@ -12,16 +12,17 @@ group:
 
 security:
     login:
-        username: Username
+        username: Email
         password: Password
         remember_me: 'Remember me'
         submit: 'Log in'
 
 profile:
     show:
-        username: Username
+        firstName: Name
         email: Email
     edit:
+        firstName: Name
         submit: Update
     flash:
         updated: 'The profile has been updated.'
@@ -32,6 +33,7 @@ change_password:
         success: 'The password has been changed.'
 
 registration:
+    firstName: Name
     check_email: |
         An email has been sent to %email%. It contains an activation link you must click to activate your account.
     confirmed: 'Congrats %username%, your account is now activated.'
@@ -58,7 +60,7 @@ resetting:
 
         If you don't get an email check your spam folder or try again.
     request:
-        username: 'Username or email address'
+        username: 'Email address'
         submit: 'Reset password'
     reset:
         submit: 'Change password'
@@ -84,6 +86,7 @@ layout:
 form:
     group_name: 'Group name'
     username: Username
+    firstName: Name
     email: Email
     current_password: 'Current password'
     password: Password

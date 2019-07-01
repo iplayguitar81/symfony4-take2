@@ -23,5 +23,16 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    # customize settings for redirect after registration using custom EventListener class...
+    app.redirect_after_registration_subscriber:
+        class: App\EventListener\RedirectAfterRegistrationSubscriber
+        autowire: true
+        tags:
+            - { name: kernel.event_subscriber }
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+#    app.form.registration:
+#        class: App\Form\RegistrationFormType
+#        tags:
+#            - { name: form.type}
