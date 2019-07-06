@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hospital Listing Page{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-3">
+
+        <h1><i class="fa fa-hospital-o" aria-hidden="true"></i> Hospital Listings</h1>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Hospital Name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Address</th>
+                <th scope="col">Details</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for hospital in hospitals %}
+                <tr>
+                    <td>{{ hospital.name }}</td>
+                    <td>{{ hospital.phoneNumber }}</td>
+                    <td>{{ hospital.address }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-dark" href="{{ path('app_hospital_show', {id: hospital.id}) }}">
+                           {{ hospital.name }} Details
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4" align="center">No Hospitals found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}

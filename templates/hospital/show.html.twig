@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Hospital Listings{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-3">
+        <h1><i class="fa fa-hospital-o" aria-hidden="true"></i> {{ hospital.name }}</h1>
+
+        <p><i class="fa fa-location-arrow" aria-hidden="true"></i> {{ hospital.address }}</p>
+        <p>Phone Number:  {{ hospital.phoneNumber }}</p>
+
+
+        <h2><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact {{ hospital.name }} </h2>
+
+        {{ form_start(contactForm) }}
+
+
+        {{ form_widget(contactForm) }}
+
+        <button type="submit" class="btn btn-dark">Send</button>
+
+        {{ form_end(contactForm) }}
+
+
+
+
+    </div>
+
+{%  endblock %}

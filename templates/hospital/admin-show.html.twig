@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Hospital Listings{% endblock %}
+
+{% block body %}
+
+<div class="container mt-3">
+
+
+<h1><i class="fa fa-envelope-o" aria-hidden="true"></i>  {{ hospital.name }} Messages</h1>
+
+{% for message in messages %}
+
+<p><b>Subject:</b>  {{ message.subject }}</p>
+<p><b>Email:</b>  {{ message.email }}</p>
+<p><b>Message:</b>  {{ message.message }}</p>
+
+    <hr/>
+
+{% endfor %}
+
+</div>
+
+
+{% endblock %}
+
+

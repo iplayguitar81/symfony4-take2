@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Hospital Listings{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-3">
+        <h1><i class="fa fa-unlock" aria-hidden="true"></i> Admin Hospital Listings<br/>
+            <a class="btn btn-sm btn-primary ml-auto" href="{{ path('app_hospitals_create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Create Hospital </a>
+        </h1>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Hospital Name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Address</th>
+
+                <th scope="col">Options</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for hospital in hospitals %}
+                <tr>
+                    <td>{{ hospital.name }}</td>
+                    <td>{{ hospital.phoneNumber }}</td>
+                    <td>{{ hospital.address }}</td>
+
+                    <td>
+                        <div class="">
+                            <a class="btn btn-sm btn-dark" href="{{ path('app_hospital_show_admin', {id: hospital.id}) }}">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                View Messages
+                            </a>
+                            <a class="btn btn-sm btn-success" href="{{ path('app_hospital_edit', {id: hospital.id}) }}">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                Edit
+                            </a>
+                            <a class="btn btn-sm btn-danger" href="{{ path('app_hospital_delete', {id: hospital.id}) }}">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4" align="center">No Hospitals found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{%  endblock %}

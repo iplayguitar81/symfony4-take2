@@ -27,7 +27,7 @@
                 <a class="nav-link" href="{{ path('home') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Hospitals</a>
+                <a class="nav-link" href="{{ path('app_hospitals') }}">Hospitals</a>
             </li>
 
             {% if is_granted('ROLE_USER') %}
@@ -41,9 +41,9 @@
 
                         {% if is_granted('ROLE_ADMIN') %}
 
-                            <a class="dropdown-item" href="#"><i class="fa fa-unlock" aria-hidden="true"></i> Hospitals Admin</a>
+                            <a class="dropdown-item" href="{{ path('app_hospitals_admin') }}"><i class="fa fa-unlock" aria-hidden="true"></i> Hospitals Admin</a>
 
-                            <a class="dropdown-item" href="#"><i class="fa fa-plus" aria-hidden="true"></i> Create Hospital</a>
+                            <a class="dropdown-item" href="{{ path('app_hospitals_create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Create Hospital</a>
 
                         {% endif %}
 
